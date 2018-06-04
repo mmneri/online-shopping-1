@@ -24,6 +24,9 @@
 
     <!-- Bootstrap core CSS -->
     <link href="${css}/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Spacelab Theme -->
+    <link href="${css}/bootstrap-spacelab-theme.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="${css}/shop-homepage.css" rel="stylesheet">
@@ -31,33 +34,35 @@
   </head>
 
   <body>
+	<div class="wrapper">
+	    <!-- Navigation -->
+	    <%@include file="./fragments/navigation.jsp" %>
+	    <!-- End of Navigation -->
 
-    <!-- Navigation -->
-    <%@include file="./fragments/navigation.jsp" %>
-    <!-- End of Navigation -->
-
-    <!-- Page Content -->
-    <!-- Home -->
-    <c:if test="${userClickHome == true}">
-    	<%@include file="home.jsp" %>
-    </c:if>
-    <!-- About Us -->
-    <c:if test="${userClickAbout == true}">
-    	<%@include file="about.jsp" %>
-    </c:if>
-    <!-- Products -->
-    <c:if test="${userClickProduct == true}">
-    	<%@include file="products.jsp" %>
-    </c:if>
-    <!-- Contact -->
-    <c:if test="${userClickContact == true}">
-    	<%@include file="contact.jsp" %>
-    </c:if>
-    <!-- End of Page Content -->
-
-    <!-- Footer -->
-    <%@include file="./fragments/footer.jsp" %>
-    <!-- End of Footer -->
+	    <!-- Page Content -->
+	    <div class="content">
+		    <!-- Home -->
+		    <c:if test="${userClickHome == true}">
+		    	<%@include file="home.jsp" %>
+		    </c:if>
+		    <!-- About Us -->
+		    <c:if test="${userClickAbout == true}">
+		    	<%@include file="about.jsp" %>
+		    </c:if>
+		    <!-- Products -->
+		    <c:if test="${userClickProduct == true}">
+		    	<%@include file="products.jsp" %>
+		    </c:if>
+		    <!-- Contact -->
+		    <c:if test="${userClickContact == true}">
+		    	<%@include file="contact.jsp" %>
+		    </c:if>
+	    </div>
+	    <!-- End of Page Content -->
+	
+	    <!-- Footer -->
+	    <%@include file="./fragments/footer.jsp" %>
+	    <!-- End of Footer -->
 	
     <!-- Bootstrap core JavaScript -->
     <script src="${js}/jquery.min.js"></script>
@@ -65,7 +70,7 @@
     
     <!-- Self coded JavaScript -->
     <script src="${js}/myapp.js"></script>
-
+	</div>
   </body>
 
 </html>
