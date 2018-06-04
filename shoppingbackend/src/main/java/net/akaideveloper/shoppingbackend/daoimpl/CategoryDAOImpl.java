@@ -3,9 +3,12 @@ package net.akaideveloper.shoppingbackend.daoimpl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import net.akaideveloper.shoppingbackend.dao.CategoryDAO;
 import net.akaideveloper.shoppingbackend.dto.Category;
 
+@Repository("categoryDAO")
 public class CategoryDAOImpl implements CategoryDAO {
 	
 	private static List<Category> categories = new ArrayList<>();
@@ -22,6 +25,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		categories.add(category);
 		
 		//Adding second example
+		category = new Category();
 		category.setId(2);
 		category.setName("BAWAHAN/ROK/CELANA");
 		category.setDescription("Pakaian bawahan, rok, dan celana.");
@@ -30,6 +34,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		categories.add(category);
 		
 		//Adding third example
+		category = new Category();
 		category.setId(3);
 		category.setName("CARDIGAN/BLAZZER/VEST");
 		category.setDescription("Pakaian cardigan, blazzer, dan vest.");

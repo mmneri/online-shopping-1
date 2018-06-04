@@ -1,17 +1,27 @@
 package net.akaideveloper.onlineshopping.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import net.akaideveloper.shoppingbackend.dao.CategoryDAO;
 
 @Controller
 public class PageController {
 	
+	@Autowired
+	private CategoryDAO categoryDAO;
+	
 	@RequestMapping(value = {"/", "/home", "/index"})
 	public ModelAndView index(){
 		ModelAndView mv = new ModelAndView("page");
+		
 		mv.addObject("title", "Home");
 		mv.addObject("userClickHome", true);
+		
+		//Passing list of categories
+		mv.addObject("categories", categoryDAO.list());
+		
 		return mv;
 	}
 	
