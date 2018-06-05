@@ -14,11 +14,12 @@ public class CategoryDAOImpl implements CategoryDAO {
 	private static List<Category> categories = new ArrayList<>();
 	
 	static {
+		
 		Category category = new Category();
 		
 		//Adding first example
 		category.setId(1);
-		category.setName("ATASAN/TUNIK");
+		category.setName("Atasan-Tunik");
 		category.setDescription("Pakaian atasan dan Tunik.");
 		category.setImageURL("ex-bawahan-rok-celana-1.jpg");
 		
@@ -27,7 +28,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		//Adding second example
 		category = new Category();
 		category.setId(2);
-		category.setName("BAWAHAN/ROK/CELANA");
+		category.setName("Bawahan-Rok-Celana");
 		category.setDescription("Pakaian bawahan, rok, dan celana.");
 		category.setImageURL("ex-atasan-tunik-1.jpg");
 		
@@ -36,7 +37,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		//Adding third example
 		category = new Category();
 		category.setId(3);
-		category.setName("CARDIGAN/BLAZZER/VEST");
+		category.setName("Cardigan-Blazzer-Vest");
 		category.setDescription("Pakaian cardigan, blazzer, dan vest.");
 		category.setImageURL("ex-cardigan-blazzer-vest-1.jpg");
 		
@@ -45,8 +46,20 @@ public class CategoryDAOImpl implements CategoryDAO {
 	
 	@Override
 	public List<Category> list() {
-		// TODO Auto-generated method stub
+		
 		return categories;
+	}
+
+	@Override
+	public Category get(int id) {
+		
+		for(Category category : categories){
+			
+			if(category.getId() == id) 
+				return category;
+		}
+		
+		return null;
 	}
 
 }

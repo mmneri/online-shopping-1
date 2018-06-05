@@ -50,8 +50,8 @@
 		    	<%@include file="about.jsp" %>
 		    </c:if>
 		    <!-- Products -->
-		    <c:if test="${userClickProduct == true}">
-		    	<%@include file="products.jsp" %>
+		    <c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
+		    	<%@include file="listProducts.jsp" %>
 		    </c:if>
 		    <!-- Contact -->
 		    <c:if test="${userClickContact == true}">
